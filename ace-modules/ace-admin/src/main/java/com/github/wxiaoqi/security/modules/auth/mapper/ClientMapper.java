@@ -1,6 +1,7 @@
 package com.github.wxiaoqi.security.modules.auth.mapper;
 
 import com.github.wxiaoqi.security.modules.auth.entity.Client;
+import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface ClientMapper extends Mapper<Client> {
     List<String> selectAllowedClient(String serviceId);
 
     List<Client> selectAuthorityServiceInfo(int clientId);
+
+    Client selectClientByCode(@Param("code") String code);
 }

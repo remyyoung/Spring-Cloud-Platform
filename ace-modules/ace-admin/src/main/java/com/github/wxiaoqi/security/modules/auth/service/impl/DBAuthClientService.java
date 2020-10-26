@@ -45,8 +45,9 @@ public class DBAuthClientService implements AuthClientService {
     @Override
     public void validate(String clientId, String secret) throws Exception {
         Client client = new Client();
-        client.setCode(clientId);
-        client = clientMapper.selectOne(client);
+        //client.setCode(clientId);
+        //client = clientMapper.selectOne(client);
+        client = clientMapper.selectClientByCode(clientId);
         if(client==null||!client.getSecret().equals(secret)){
             throw new ClientInvalidException("Client not found or Client secret is error!");
         }

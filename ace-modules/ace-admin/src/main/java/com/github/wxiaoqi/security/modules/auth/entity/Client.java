@@ -10,14 +10,18 @@ public class Client {
     @Id
     private Integer id;
 
+    @Column(name = "code")
     private String code;
 
+    @Column(name = "secret")
     private String secret;
 
+    @Column(name = "name")
     private String name;
-
+    @Column(name = "locked")
     private String locked = "0";
 
+    @Column(name = "description")
     private String description;
 
     @Column(name = "crt_time")
